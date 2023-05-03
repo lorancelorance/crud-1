@@ -1,0 +1,29 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Employee Details</h1>
+        <button type="button"class="btn-close" aria-label="Close" (click)="bsModalRef.hide()">
+        </button>
+      </div>
+      <div class="modal-body">
+        <form name="productForm" [formGroup]="addProduct">
+          <div class="mb-3">
+            <label for="Name" class="form-label">Name</label>
+            <input type="text" formControlName="Name"  class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="Description" class="form-label">Description</label>
+            <input type="text" formControlName="Description"  class="form-control">
+          </div>
+          <div class="mb-3">
+              <label for="Categories" class="form-label">Categories</label>
+              <input type="text" formControlName="Categories" class="form-control">
+            </div>  
+        </form>
+   </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">close</button>
+        <button type="submit" value="Submit" (click)="updateProduct()" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>

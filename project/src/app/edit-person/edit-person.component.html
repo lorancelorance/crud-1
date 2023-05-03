@@ -1,0 +1,25 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Employee Details</h1>
+        <button type="button"class="btn-close" aria-label="Close" (click)="bsModalRef.hide()">
+        </button>
+      </div>
+      <div class="modal-body">
+        <form name="personForm" action="" [formGroup]="addPerson" method="POST">
+          <div class="mb-3">
+            <label for="Name" class="form-label">Name</label>
+            <input type="text" formControlName="Name" class="form-control">
+          </div>
+          <div class="mb-3">
+              <label for="Email" class="form-label">Email</label>
+              <input type="text" formControlName="Email" class="form-control">
+          </div> 
+        </form>
+   </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">close</button>
+        <button type="submit" value="Submit" (click)="updatePerson()" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>

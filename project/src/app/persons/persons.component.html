@@ -1,0 +1,56 @@
+<button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-primary" style="margin-top: 10px; margin-left: 700px;">Add
+    Persons</button>
+
+<div class="container-fluid">
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of addperson">
+            <td>{{person.Name}}</td>
+            <td>{{person.Email}}</td>
+            <td>
+              <button type="button" class="btn btn-info" (click)="openModalWithEditComponent(person)">
+                <i class="fa fa-anchor"></i>
+                </button>
+                <button class="btn btn-danger mx-3" (click)="delPerson(person)"><i class="fa fa-trash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Employee Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form name="personForm" action="" [formGroup]="addPerson" method="POST">
+            <div class="mb-3">
+              <label for="Name" class="form-label">Name</label>
+              <input type="text" formControlName="Name" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="Email" class="form-label">Email</label>
+                <input type="text" formControlName="Email" class="form-control">
+            </div> 
+          </form>
+     </div>
+        <div class="modal-footer">
+          <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" value="Submit" (click)="savePerson()" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>

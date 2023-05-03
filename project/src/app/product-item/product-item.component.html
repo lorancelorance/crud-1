@@ -1,0 +1,59 @@
+<button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-primary" style="margin-top: 10px; margin-left: 700px;">Add
+    Products</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Categories</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of addproduct">
+            <td>{{product.Name}}</td>
+            <td>{{product.Description}}</td>
+            <td>{{product.Categories}}</td>
+            <td>
+              <button type="button" class="btn btn-info" (click)="openModalWithEditComponent(product)">
+                <i class="fa fa-anchor"></i>
+                </button>
+                <button class="btn btn-danger mx-3"(click)="delProduct(product)"><i class="fa fa-trash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Employee Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form name="productForm" [formGroup]="addProduct">
+            <div class="mb-3">
+              <label for="Name" class="form-label">Name</label>
+              <input type="text" formControlName="Name"  class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="Description" class="form-label">Description</label>
+              <input type="text" formControlName="Description"  class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="Categories" class="form-label">Categories</label>
+                <input type="text" formControlName="Categories" class="form-control">
+              </div>  
+          </form>
+     </div>
+        <div class="modal-footer">
+          <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" value="Submit" (click)="saveProduct()" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>

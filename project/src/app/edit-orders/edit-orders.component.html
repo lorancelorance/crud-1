@@ -1,0 +1,42 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h1 class="modal-title fs-5">Edit Orders</h1>
+          <button type="button" class="btn-close" aria-label="Close" (click)="bsModalRef.hide()">
+          </button>
+      </div>
+      <div class="modal-body">
+          <form name="orderForm" action="" method="POST" [formGroup]="addOrder" novalidate>
+              <div class="mb-3">
+                  <label for="No" class="form-label">Order No</label>
+                  <input type="text" formControlName="No" class="form-control" id="exampleInputEmail1"
+                      aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                  <label for="Name" class="form-label">Name</label>
+                  <input type="text" formControlName="Name" class="form-control">
+              </div>
+              <div class="mb-3">
+                  <label for="Quntity" class="form-label">Quntity</label>
+                  <input type="text" formControlName="Quntity" class="form-control">
+              </div>
+              <div class="mb-3">
+                  <label for="Price" class="form-label">Price</label>
+                  <input type="text" formControlName="Price" class="form-control">
+              </div>
+              <div class="mb-3">
+                  <label for="Total" class="form-label">Total</label>
+                  <input type="text" formControlName="Total" class="form-control">
+              </div>
+              <div class="mb-3">
+                  <label for="Date" class="form-label">Date</label>
+                  <input type="text" formControlName="Date" class="form-control">
+              </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">close</button>
+          <button type="submit" value="Submit" (click)="updateOrder()" class="btn btn-primary">Update</button>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid ">
+        <a class="navbar-brand" href="#">Order Management</a>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row flex-nowrap ">
+        <div class="bg-light     col-auto col-md-2 min-vh-100 d-flex flex-column ">
+            <div class="p-2">
+                <a href="" class="d-flex text-decoration-none  mt-1">
+                    <ul class="nav nav-pills flex-column mt-25 ">
+                        <li class="nav-item ">
+                            <a href="" class="nav-link text-black" aria-current="page" routerLink='order'>Orders</a>
+                        </li>
+                        <hr>
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-black" routerLink='product-item'>Product item</a>
+                        </li>
+                        <hr>
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-black" routerLink='persons'>Persons</a>
+                        </li>
+                        <hr>
+                    </ul>
+                </a>
+            </div>
+
+        </div>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+
+    </div>
+</div>
